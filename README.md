@@ -25,7 +25,8 @@ COREL_ISO=/path/to/corel_linux_1.2.iso ./setup.sh
 - stages old libc5 and X11 runtime libraries locally under `compat/`
 - stages classic X11 data and fonts locally under `compat/x11` and `compat/fonts`
 - builds a small 32-bit preload shim that bypasses the old libc5 startup crash on modern hosts
-- launches WordPerfect in a `bwrap` filesystem view so all runtime state stays inside the repo under `state/`
+- launches WordPerfect in a `bwrap` filesystem view that provides the legacy paths and compatibility runtime it expects
+- keeps WordPerfect user config and working state under `state/`
 - seeds the full bundled WP Type 1 screen-font set into `app/usr/lib/wp8/shlib10`
 - seeds a richer generated `wp.drs` into the staged app tree so Roman/Helve/Courier screen fonts work without an interactive font-install step
 - ships precomputed X font index metadata so setup does not need to generate it on the host
